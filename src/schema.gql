@@ -3,8 +3,9 @@
 # ------------------------------------------------------
 
 type User {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: String!
+  email: String!
+  name: String
 }
 
 type Post {
@@ -24,38 +25,40 @@ scalar DateTime
 
 type Query {
   users: [User!]!
-  user(id: Int!): User!
+  user(id: String!): User!
   posts: [Post!]!
-  post(id: Int!): Post!
+  post(id: String!): Post!
 }
 
 type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
-  removeUser(id: Int!): User!
+  removeUser(id: String!): User!
   createPost(createPostInput: CreatePostInput!): Post!
   updatePost(updatePostInput: UpdatePostInput!): Post!
-  removePost(id: Int!): Post!
+  removePost(id: String!): Post!
 }
 
 input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  email: String!
+  name: String
 }
 
 input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  email: String
+  name: String
+  id: String!
 }
 
 input CreatePostInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  title: String!
+  content: String
+  authorId: String!
 }
 
 input UpdatePostInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  title: String
+  content: String
+  authorId: String
+  id: String!
 }
