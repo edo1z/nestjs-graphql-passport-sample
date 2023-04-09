@@ -2,7 +2,7 @@ import { ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 export class Profile {
-  sub: string;
+  id: string;
   email: string;
   name?: string;
 }

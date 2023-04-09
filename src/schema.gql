@@ -31,7 +31,7 @@ type SignInPayload {
 }
 
 type Profile {
-  sub: String!
+  id: String!
   email: String!
   name: String
 }
