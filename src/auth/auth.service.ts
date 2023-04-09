@@ -9,8 +9,8 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async signIn(userId: string, password: string): Promise<any> {
-    const user = await this.usersService.findOne(userId);
+  async signIn(email: string, password: string): Promise<any> {
+    const user = await this.usersService.findByEmail(email);
     if (user?.password !== password) {
       throw new UnauthorizedException();
     }
